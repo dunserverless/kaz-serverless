@@ -1,0 +1,22 @@
+{
+  "name": "kaz-serverless",
+  "version": "0.1.0",
+  "bin": {
+    "kaz-serverless": "bin/kaz-serverless.js"
+  },
+  "scripts": {
+    "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
+    "cdk": "cdk",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.538.0",
+    "@aws-sdk/lib-dynamodb": "^3.538.0",
+    "aws-cdk": "2.133.0",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.133.0",
+    "constructs": "^10.0.0"
+  }
+}
