@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const cdk = require('aws-cdk-lib')
-const { ApiStack } = require('./constructs/api-stack')
+const { ApiStack } = require('./constructs/api-stack.js')
+const { DatabaseStack } = require('./constructs/database-stack.js')
 
 // pass value with context flag when you synth or deploy
 // cdk deploy --profile sand --context stageName=test
@@ -11,8 +12,12 @@ const app = new cdk.App()
 let stageName = app.node.tryGetContext('stageName')
 
 if (!stageName) {
-  console.log('Defaulting stage name to dev')
+  console.log('Defaulting stage name to KH')
   stageName = 'KH'
 }
 
-new ApiStack(app, `ApiStack-${stageName}`, { stageName })
+const dbStack = new DatabaseStack(app, `DatabaseStack-${stageName}`, { stageName })
+new ApiStack(app, `ApiStack-${stageName}`, { 
+  stageName,
+  restaurantsTable: dbStack.restaurantsTable,
+})
