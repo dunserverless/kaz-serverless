@@ -18,5 +18,3 @@ class DatabaseStack extends Stack {
 }
 
 module.exports = { DatabaseStack }
-
-
