@@ -11,6 +11,9 @@ destroy:
 int:
 	AWS_REGION=eu-west-1 npm run test
 
+e2e:
+	AWS_REGION=eu-west-1 npm run test:e2e
+
 envvars:
 	./export-env.sh ApiStack-kazza eu-west-1
 
