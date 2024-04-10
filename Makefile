@@ -1,6 +1,4 @@
-.PHONY: deploy destroy int envvars creds seed region
-
-export AWS_REGION := eu-west-1  
+.PHONY: deploy destroy int envvars creds seed
 
 deploy:
 	cdk deploy --all --profile sand --context stageName=kazza
@@ -18,8 +16,7 @@ envvars:
 	./export-env.sh ApiStack-kazza eu-west-1
 
 creds:
-	aws sso login --profile sand && \
-	eval $(aws-sso-creds export -p sand)
+	aws sso login --profile sand
 
 seed:
 	node seed-restaurants.js

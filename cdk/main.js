@@ -23,5 +23,6 @@ new ApiStack(app, `ApiStack-${stageName}`, {
   stageName,
   restaurantsTable: dbStack.restaurantsTable,
   cognitoUserPool: cognitoStack.cognitoUserPool,
-  webUserPoolClient: cognitoStack.webUserPoolClient
+  webUserPoolClient: cognitoStack.webUserPoolClient,
+  serverUserPoolClient: cognitoStack.serverUserPoolClient
 })
