@@ -40,7 +40,7 @@ jobs:
         run: cdk deploy --all --require-approval never --context stageName=kazza
 
       - name: export env
-        run: ./export-env.sh ApiStack-dev eu-west-1
+        run: ./export-env.sh ApiStack-kazza eu-west-1
 
       - name: run integration test
         run: npm run test
