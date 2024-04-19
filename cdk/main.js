@@ -13,13 +13,14 @@ const app = new cdk.App()
 let stageName = app.node.tryGetContext('stageName')
 
 if (!stageName) {
-  console.log('Defaulting stage name to KH')
-  stageName = 'KH'
+  console.log('Defaulting stage name to kazza')
+  stageName = 'kazza'
 }
 
 const dbStack = new DatabaseStack(app, `DatabaseStack-${stageName}`, { stageName })
 const cognitoStack = new CognitoStack(app, `CognitoStack-${stageName}`, { stageName })
 new ApiStack(app, `ApiStack-${stageName}`, { 
+  serviceName: 'workshop-kazza',
   stageName,
   restaurantsTable: dbStack.restaurantsTable,
   cognitoUserPool: cognitoStack.cognitoUserPool,

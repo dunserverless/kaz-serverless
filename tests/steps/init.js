@@ -1,6 +1,11 @@
 const { promisify } = require('util')
 const awscred = require('awscred')
-require('dotenv').config()
+const dotenv = require('dotenv')
+// NOTE: the order these files are loaded is important. Because we want the .env.local 
+// to override whatever is in .env file, so we have to load it first. This is how the dotenv
+// module handles overlapping env variables - the first one wins.
+dotenv.config({ path: './.env.local' })
+dotenv.config()
 
 let initialized = false
 
