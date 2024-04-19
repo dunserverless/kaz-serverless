@@ -13,8 +13,8 @@ const app = new cdk.App()
 let stageName = app.node.tryGetContext('stageName')
 
 if (!stageName) {
-  console.log('Defaulting stage name to kazza')
-  stageName = 'kazza'
+  console.log('Defaulting stage name to kazza-dev')
+  stageName = 'kazza-dev'
 }
 
 const dbStack = new DatabaseStack(app, `DatabaseStack-${stageName}`, { stageName })
