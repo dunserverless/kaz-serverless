@@ -37,10 +37,10 @@ jobs:
         run: npm install -g aws-cdk
 
       - name: deploy to dev
-        run: cdk deploy --all --require-approval never
+        run: cdk deploy --all --require-approval never --context stageName=kazza
 
       - name: export env
-        run: ./export-env.sh ApiStack-dev us-east-1
+        run: ./export-env.sh ApiStack-dev eu-west-1
 
       - name: run integration test
         run: npm run test
