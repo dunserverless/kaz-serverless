@@ -7,7 +7,7 @@
   "scripts": {
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
     "cdk": "cdk",
-    "test": "cross-env TEST_MODE=handler jest --silent",
+    "test": "cross-env TEST_MODE=handler jest",
     "test:e2e": "cross-env TEST_MODE=http jest --silent"
   },
   "devDependencies": {

@@ -61,6 +61,3 @@ do
 done
 
 echo ".env file has been created/updated with environment variables from Lambda functions and CloudFormation stack outputs."
-
-
-
